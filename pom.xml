@@ -15,6 +15,7 @@
         <module>spring-cloud01</module>
         <module>spring-cloud02</module>
         <module>spring-cloud03</module>
+        <module>spring-cloud04-zookeeper</module>
         <module>spring-cloud-common</module>
         <module>spring-cloud-eurekaserver-1</module>
         <module>spring-cloud-eurekaserver-2</module>
