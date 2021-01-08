@@ -21,6 +21,7 @@
         <module>spring-cloud-eurekaserver-2</module>
         <module>spring-cloud-eurekaserver-3</module>
         <module>spring-cloud-hystrix</module>
+        <module>spring-cloud-kafka</module>
     </modules>
 
     <properties>
