@@ -1,6 +1,11 @@
 package com.jackie.common.annotation.check;
 
+import com.jackie.common.annotation.log.DcLog;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,4 +18,32 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class DcLogCheckAspect {
+
+    @Pointcut("@annotation(com.jackie.common.annotation.log.DcLog)")
+    public void controllerDcLog(){
+
+    }
+
+
+    @After(("execution(* com.jackie..*.*(..)) && @annotation(dcLog)"))
+    public void excuLogData(DcLog dcLog, JoinPoint joinPoint){
+        String value=dcLog.value();
+        int code=dcLog.code();
+        String type=dcLog.type();
+
+        System.out.println("----------------------------------------------");
+        System.out.println("-----value----"+value+"------------");
+        System.out.println("-----code-----"+code+"------------");
+        System.out.println("-----type-----"+type+"------------");
+        System.out.println("----------------------------------------------");
+
+
+    }
+
+
+
+
+
+
+
 }
